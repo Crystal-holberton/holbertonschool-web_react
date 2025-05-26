@@ -27,10 +27,20 @@ const director1: Directors = {
   numberOfReports: 17,
 };
 
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+};
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
+
 console.log('Teacher:', teacher3);
 
 console.log('Director:', director1);
 
-const el = document.createElement('pre');
-el.textContent = JSON.stringify(director1, null, 2);
-document.body.appendChild(el);
+console.log(printTeacher("John", "Doe"));
+
+const p = document.createElement('p');
+p.textContent = printTeacher("John", "Doe");
+document.body.appendChild(p);
