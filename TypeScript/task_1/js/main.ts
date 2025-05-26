@@ -5,7 +5,7 @@ interface Teacher {
   yearsOfExperience?: number;
   location: string;
   [key: string]: any;
-}
+};
 
 const teacher3: Teacher = {
   firstName: 'John',
@@ -15,8 +15,22 @@ const teacher3: Teacher = {
   contract: false,
 };
 
+interface Directors extends Teacher {
+  numberOfReports: number;
+};
+
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+
 console.log('Teacher:', teacher3);
 
+console.log('Director:', director1);
+
 const el = document.createElement('pre');
-el.textContent = JSON.stringify(teacher3, null, 2);
+el.textContent = JSON.stringify(director1, null, 2);
 document.body.appendChild(el);
